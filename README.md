@@ -1,12 +1,21 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Form.jsx
+## quantityNum
+  Menyediakan array yang berukuran n, kemudian menampilkan angka 1-n untuk menjadi pilihan item quantity.
+  - Operator `spread (...)` mengubah array kosong tadi menjadi array dengan 20 elemen undefined.
+  - `map()` adalah metode array yang digunakan untuk melakukan loop (perulangan) dan memproses setiap elemen dalam array.
+  - Parameter `_` berarti bahwa kita tidak peduli dengan nilai elemen tersebut karena hanya butuh indeksnya (i).
+## setQuantity()
+  - `useState(1)` membuat state bernama quantity dengan nilai awal 1.
+  - `onChange` untuk menghandle perubahan nilai quantity pada div select.
+  - penambahan `(e) =>` untuk menangkap event yang terjadi saat pengguna berinteraksi dengan elemen.
+  - `e.target.value` mengambil nilai yang dipilih/dimasukkan oleh pengguna.
+## setname()
+  -  `useState("")` membuat state bernama name dengan nilai awal string kosong ("").
+  -  `onChange` untuk menghandle perubahan nilai quantity pada div input.
+  -  penambahan `(e) =>` untuk menangkap event yang terjadi saat pengguna berinteraksi dengan elemen.
+## onSubmit={handleSubmit}
+  - `e` adalah event object yang diberikan otomatis oleh React saat event terjadi. `e` menyimpan informasi tentang event yang sedang berlangsung. Dalam konteks ini, e adalah event dari form submit.
+  - Mencegah reload dengan `e.preventDefault()`.
+  - Kemudian membuat object newItem dari data yang diterima dari event. Untuk id, dapat diakali dengan menggunakan `Date.now()` yaitu angka yan gmenunjukkan detik secara real-time.
+  - `onAddItem(newItem)` untuk menambahkan objek baru ke dalam array.
+  - `setname("")` dan `setQuantity(1)` untuk mereset data pada inputan.
